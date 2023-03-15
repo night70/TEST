@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+#main{
+    width: 100%;
+    height: 100%;
+}
+.computerSide{
+    width: 100%;
+    height: 15%;
+    border: 1px black solid;
+}
+.computerSide::after{
+    content: "";
+    clear: both;
+    display: table;
+    margin-bottom: 1px;
+}
+.middle{
+    width: 100%;
+    height: 284px;
+    border: 1px black solid;
+    /* margin-bottom: 1px; */
+}
+#deck{
+    margin: auto;
+    width: 30%;
+    /* display: none; */
+}
+#deck .onDeck{
+    height: 141px;
+    width: 325px;
+    margin: auto;
+}
+/* #computerHand{
+    background-image: url("./img/texture.jpg");
+    background-size: cover;
+} */
+.mySide{
+    width: 100%;
+    height: 15%;
+    border: 1px black solid;
+}
+.mySide::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.holder{
+    float: left;
+    height: 15%;
+    padding: 0px 62px;
+}
+.img-holder{
+    width: 100%;
+    height: 100%;
+}
+.mySide .img-holder {
+    padding: 0px 82px;
+}
