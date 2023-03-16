@@ -78,64 +78,42 @@ function throwMyChoice(value){
 function judge(myHand,computerHand){
     // my win probability
     let tmp = document.querySelector(".middle");
-    let res = "";
-    if(myHand == "rock"){
-        switch (computerHand) {
-            case "rock":
-                res = "equal";
-                break;
-            case "paper":
-                res = "lose";// change the background of middle to red 
-                break;
-            case "scissors":
-                res = "win";// change the background of middle to green  
-                break;
-            default:
-                break;
+    function judgeSwitch(me,com){
+        if     (me == "rock"){
+            if(com == "rock") res = "yellow"
+            else if(com == "paper") res = "red"
+            else res = "green"
+        } 
+        else if(me == "paper"){
+            if(com == "rock") res = "green"
+            else if(com == "paper") res = "yellow"
+            else  res = "red"
+        } 
+        else {
+           if(com == "rock") res = "red"
+           else if(com == "paper") res = "green"
+           else  res = "yellow"
         }
+        return res;
     }
-    else if(myHand == "paper"){
-        switch (computerHand) {
-            case "rock":
-                res = "win";// change the background of middle to green 
-                break;
-            case "paper":
-                res = "equal";// change the background of middle to yellow 
-                break;
-            case "scissors":
-                res = "lose";// change the background of middle to red 
-                break;
-            default:
-                break;
-        }
-    }
-    else if(myHand == "scissors"){
-        switch (computerHand) {
-            case "rock":
-                res = "lose";// change the background of middle to red 
-                break;
-            case "paper":
-                res = "win";// change the background of middle to green 
-                break;
-            case "scissors":
-                res = "equal"; // change the background of middle to yellow 
-                break;
-            default:
-                break;
-        }
-    }
-    switch (res) {
-        case "win":
-            tmp.style.backgroundColor = "green";
-            break;
-        case "equal":
-            tmp.style.backgroundColor = "yellow";
-            break;
-        case "lose":
-            tmp.style.backgroundColor = "red";
-            break;
+    tmp.style.backgroundColor = judgeSwitch(myHand,computerHand)
     
-        default:
-            break;
-    }
+}
+function scoreBoard(res){
+    let outPut = "the fuck";
+    // switch (res) {
+    //     case "win":
+    //         outPut = "You are a winner!"
+    //         break;
+    //     case "equal":
+    //         outPut = "Nothing has change!"
+    //         break;
+    //     case "win":
+    //         outPut = "Looseeerr!"
+    //         break;
+    
+    //     default:
+    //         break;
+    // }
+    document.getElementById("showTheResult").innerHTML = 5;
 }
