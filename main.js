@@ -35,6 +35,26 @@
 //     // setTimeout(function() { hideDeck(true); }, 1000)
     
 // }
+
+function makeSound(input){
+    let sourceSound = '';
+    switch (input) {
+        case "green":
+            sourceSound = "./sounds/win.mp3"
+            break;
+        case "yellow":
+            sourceSound = "./sounds/equal.mp3"
+            break;
+        case "red":
+            sourceSound = "./sounds/lose.mp3"
+            break;
+        default:
+            break;
+    }
+    let gameSound = new Audio(sourceSound);
+    gameSound.play();
+
+}
 function throwComputerChoice(){
     let ran = Math.floor(Math.random() * 3) + 1;
     let tmp = document.querySelector("#computerHandImage");
@@ -97,23 +117,29 @@ function judge(myHand,computerHand){
         return res;
     }
     tmp.style.backgroundColor = judgeSwitch(myHand,computerHand)
-    
+    scoreBoard(res);
+    makeSound(res);
 }
 function scoreBoard(res){
-    let outPut = "the fuck";
-    // switch (res) {
-    //     case "win":
-    //         outPut = "You are a winner!"
-    //         break;
-    //     case "equal":
-    //         outPut = "Nothing has change!"
-    //         break;
-    //     case "win":
-    //         outPut = "Looseeerr!"
-    //         break;
-    
-    //     default:
-    //         break;
-    // }
-    document.getElementById("showTheResult").innerHTML = 5;
+    let outPut = "";
+    let myScore = +(document.getElementById("myScore").innerHTML);
+    let computerScore = +(document.getElementById("computerScore").innerHTML);
+    switch (res) {
+        case "green":
+            outPut = "You are a winner!"
+            myScore++;
+            break;
+        case "yellow":
+            outPut = "Nothing has change!"
+            break;
+        case "red":
+            outPut = "You are a Looseerr!"
+            computerScore++;
+            break;
+        default:
+            break;
+    }
+    document.getElementById("theResult").innerHTML = outPut;
+    document.getElementById("myScore").innerHTML = myScore;
+    document.getElementById("computerScore").innerHTML = computerScore;
 }

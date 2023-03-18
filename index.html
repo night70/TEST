@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <title>The Rock Scissors Paper</title>
 </head>
-<body>
+<body style="background-color: aliceblue;">
+    <audio id="startAudio"  preload="auto">
+        <source src="./sounds/start.mp3" type="audio/mp3">
+    </audio>    
     <div id="main">
         <!-- computer side -->
         <div class="computerSide">
@@ -17,16 +20,30 @@
         </div>
         <!-- this one is middle part -->
         <div class="middle">
-            <div id="showTheResult">
-                <!-- <p id="theResult"></p> -->
+            <div id="showTheResult" class="middle-content">
+                <p id="theResult" style="font-size: 60px;
+                margin: 28px 0px; padding-top: 0px;"></p>
             </div>
-            <div id="deck">
+            <div id="deck" class="middle-content">
                 <div class="onDeck" id="computerHand">
                     <img class="img-holder" src="img/texture.jpg" 
                     id="computerHandImage" alt="hide choices">
                 </div>
                 <div class="onDeck" id="myHand"><img class="img-holder" 
                     id="myHandImage"></div>
+            </div>
+            <div id="scoreboard" class="middle-content" style="float: right">
+                <table >
+                    <caption>score board</caption>
+                    <tr>
+                        <th>You</th>
+                        <th>Computer</th>
+                    </tr>
+                    <tr>
+                        <td id="myScore">0</td>
+                        <td id="computerScore">0</td>
+                    </tr>
+                </table>
             </div>
         </div>
         <!-- my side -->
@@ -49,4 +66,8 @@
     </div>
 </body>
 <script src="./main.js"></script>
+<script>
+    let startAudio = document.getElementById("startAudio");
+    startAudio.play();
+</script>
 </html>

@@ -4,11 +4,12 @@
 #main{
     width: 100%;
     height: 100%;
+    
 }
 .computerSide{
     width: 100%;
     height: 15%;
-    border: 1px black solid;
+    /* border: 1px black solid; */
 }
 .computerSide::after{
     content: "";
@@ -19,31 +20,53 @@
 .middle{
     width: 100%;
     height: 284px;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     /* margin-bottom: 1px; */
 }
+
 #showTheResult {
     margin: auto;
-    background-color: brown;
+    /* background-color: brown; */
+    float: left;
+    width: 30%;
+    height: 100%;
 }
 #deck{
     margin: auto;
     width: 30%;
-    /* display: none; */
+    float: left;
+    
 }
 #deck .onDeck{
     height: 141px;
-    width: 325px;
-    margin: auto;
+    width: 321px;
+    /* margin: auto; */
 }
-/* #computerHand{
-    background-image: url("./img/texture.jpg");
-    background-size: cover;
-} */
+#scoreboard{
+    float: left;
+}
+.middle-content{
+    padding: 0 102px;
+}
+table{
+    border-collapse: collapse;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    margin-top: 24px;
+}
+td,th{
+    border: 1px solid #dddddd;
+}
+.middle::after{
+    content: "";
+    clear: both;
+    display: table;
+}
 .mySide{
     width: 100%;
     height: 15%;
-    border: 1px black solid;
+    /* border: 1px black solid; */
 }
 .mySide::after{
     content: "";
